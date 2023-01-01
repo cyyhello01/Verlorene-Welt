@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using VerloreneWelt.PlayerControl;
 
 [RequireComponent(typeof(AudioSource))]
 
@@ -9,7 +10,6 @@ public class ReadNote : MonoBehaviour
     public Camera cam;
     public GameObject player;
     public GameObject noteUI;
-    //public MouseLook mouseLook;
 
     public GameObject pickUpText;
     public GameObject closeNoteText;
@@ -29,7 +29,7 @@ public class ReadNote : MonoBehaviour
 
     void OnTriggerEnter(Collider other) //&& noteUI.activeSelf
     {
-        if (other.gameObject.tag == "Collide" && !noteUI.activeSelf)
+        if (other.gameObject.tag == "Collide")// && !noteUI.activeSelf)
         {
             isCollide = true;
             pickUpText.SetActive(true);
@@ -51,7 +51,9 @@ public class ReadNote : MonoBehaviour
         if (Input.GetButtonDown("Interact") && isCollide) //when note is not active
         {
             Debug.Log("Pressed F");
-           // mouseLook.enabled = false;
+
+            cameraFreeze(false);                          //to disable camera/ movement when viewing notes
+            Debug.Log("camera freeze");
 
             noteUI.SetActive(true);
             Debug.Log("note displayed");
@@ -61,17 +63,13 @@ public class ReadNote : MonoBehaviour
             playPickUpSound();
 
 
-            //player.GetComponent<FirstPersonController>();
-            //Debug.Log("freeze walk");
-
-            //cam.GetComponent<Camera>().enabled = false;
-            //Cursor.visible = true;
-            //Cursor.lockState = CursorLockMode.None;
         }
         if (Input.GetButtonDown("NotInteract") && noteUI.activeSelf) //to check whether X is pressed & noteUI is true (active)
         {
             Debug.Log("Note is active");
-            //mouseLook.enabled = true;
+
+            cameraFreeze(true);                             //to enable camera/ movement after closing notes
+            Debug.Log("camera unfreeze");
 
             noteUI.SetActive(false);
    
@@ -81,12 +79,6 @@ public class ReadNote : MonoBehaviour
 
         }
 
-    }
-
-    public void BackButton()
-    {
-        noteUI.SetActive(false);
-        cam.GetComponent<Camera>().enabled = true;
     }
 
     void playPickUpSound()
@@ -103,5 +95,11 @@ public class ReadNote : MonoBehaviour
         audio.clip = putDownSound;
         audio.volume = 0.3f;
         audio.Play();
+    }
+
+    void cameraFreeze(bool freeze)
+    {
+        VerloreneWelt.PlayerControl.PlayerController.mouseLookEnabled = freeze; 
+       
     }
 }

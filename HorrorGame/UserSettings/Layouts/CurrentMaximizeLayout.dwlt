@@ -24,7 +24,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 16942
+  controlID: 8465
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -142,7 +142,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 16943
+  controlID: 8466
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -167,7 +167,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 16897
+  controlID: 8432
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -467,9 +467,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 2.91, y: 10.94, z: -36.940002}
+    m_Target: {x: 1.176, y: 0.00000011920929, z: -33.762}
     speed: 2
-    m_Value: {x: 2.91, y: 10.94, z: -36.940002}
+    m_Value: {x: 1.176, y: 0.00000011920929, z: -33.762}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -516,13 +516,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: -0.07808563, y: 0.2720162, z: -0.022350565, w: -0.9590052}
+    m_Target: {x: -0.05250973, y: 0.097612455, z: -0.0053598047, w: -0.993966}
     speed: 2
-    m_Value: {x: -0.07807468, y: 0.27197805, z: -0.02234743, w: -0.95887065}
+    m_Value: {x: -0.05250231, y: 0.09759867, z: -0.0053590476, w: -0.9938256}
   m_Size:
-    m_Target: 1.5585333
+    m_Target: 2.3213215
     speed: 2
-    m_Value: 1.5585333
+    m_Value: 2.3213215
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -712,8 +712,8 @@ MonoBehaviour:
     y: 0
     width: 498
     height: 480
-  m_MinSize: {x: 202, y: 221}
-  m_MaxSize: {x: 4002, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 11}
   m_Panes:
   - {fileID: 11}
@@ -750,24 +750,24 @@ MonoBehaviour:
     m_SaveData: []
   m_SceneHierarchy:
     m_TreeViewState:
-      scrollPos: {x: 0, y: 0}
+      scrollPos: {x: 0, y: 360}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: eaacfffffefaffffd27d0000d27e0000547f0000f08000000081000096810000c6810000
+      m_ExpandedIDs: 98b8ffff98d7fffffefaffff0ea0000000a1000000a2000016a4000026a40000bea40000eea400002ca500007aa50000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: padlock
-        m_OriginalName: padlock
+        m_Name: 
+        m_OriginalName: 
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: 33222
+        m_UserData: 0
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
-        m_OriginalEventType: 0
+        m_OriginalEventType: 11
         m_IsRenamingFilename: 0
         m_ClientGUIView: {fileID: 10}
       m_SearchString: 
@@ -801,7 +801,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 16944
+  controlID: 8467
 --- !u!114 &13
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -821,8 +821,8 @@ MonoBehaviour:
     y: 0
     width: 984
     height: 459
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 201, y: 221}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 2}
   m_Panes:
   - {fileID: 2}
@@ -847,8 +847,8 @@ MonoBehaviour:
     y: 0
     width: 546
     height: 459
-  m_MinSize: {x: 100, y: 100}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 102, y: 121}
+  m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 16}
   m_Panes:
   - {fileID: 15}
@@ -897,22 +897,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scripts/Padlock
+    - Assets/Scripts
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
-  - Assets/Scripts/Padlock
+  - Assets/Scripts
   m_LastFoldersGridSize: 16
-  m_LastProjectPath: D:\CYY\TARC\RST2S2G1_202211\BACS3254 3D Game Development\verlorene-welt\HorrorGame
+  m_LastProjectPath: D:\CYY\TARC\RST2S2G1_202211\BACS3254 3D Game Development\Latest\Verlorene-Welt\HorrorGame
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 1042}
-    m_SelectedIDs: beae0100
-    m_LastClickedID: 110270
-    m_ExpandedIDs: 00000000f0940000f2940000f4940000f6940000f8940000fa940000fc94000000ca9a3b
+    scrollPos: {x: 0, y: 626}
+    m_SelectedIDs: e0970000
+    m_LastClickedID: 38880
+    m_ExpandedIDs: 000000009c940000a0940000a2940000a4940000a8940000284602003e46020000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -940,7 +940,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000f0940000f2940000f4940000f6940000f8940000fa940000fc94000000ca9a3b
+    m_ExpandedIDs: 000000009c940000a0940000a2940000a4940000a8940000284602003e46020000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -965,8 +965,8 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: c6810000
-    m_LastClickedInstanceID: 33222
+    m_SelectedInstanceIDs: 08a40000
+    m_LastClickedInstanceID: 41992
     m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: 00000000e0870200
     m_RenameOverlay:
@@ -984,7 +984,7 @@ MonoBehaviour:
       m_IsRenaming: 0
       m_OriginalEventType: 11
       m_IsRenamingFilename: 1
-      m_ClientGUIView: {fileID: 5}
+      m_ClientGUIView: {fileID: 14}
     m_CreateAssetUtility:
       m_EndAction: {fileID: 0}
       m_InstanceID: 0
@@ -1044,8 +1044,8 @@ MonoBehaviour:
     y: 0
     width: 390
     height: 939
-  m_MinSize: {x: 275, y: 50}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 276, y: 71}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 18}
   m_Panes:
   - {fileID: 18}
@@ -1086,7 +1086,7 @@ MonoBehaviour:
     m_CachedPref: -160
     m_ControlHash: -371814159
     m_PrefName: Preview_InspectorPreview
-  m_LastInspectedObjectInstanceID: 31796
+  m_LastInspectedObjectInstanceID: 41992
   m_LastVerticalScrollValue: 0
   m_GlobalObjectId: 
   m_InspectorMode: 0

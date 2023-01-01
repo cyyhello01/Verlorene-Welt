@@ -28,12 +28,12 @@ public class OpenBox : MonoBehaviour
     {
         if (isCollide && Input.GetButtonDown("Interact"))
         {
-            if (padlock.transform.Find(shackle).gameObject.GetComponent<LockControl>().isOpened) //padlock - OPENED
+            if (padlock.transform.Find(shackle).gameObject.GetComponent<LockControl>().isOpened) //box - OPENED
             {
                 Debug.Log("Pressed F to open");
                 BoxOpen();
             }
-            else //padlock - LOCKED
+            else //box - LOCKED
             {
                 Debug.Log("padlock is locked");
                 boxIsLockedText.SetActive(true);

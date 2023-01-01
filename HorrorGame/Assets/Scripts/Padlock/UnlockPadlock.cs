@@ -5,7 +5,8 @@ using UnityEngine;
 public class UnlockPadlock : MonoBehaviour
 {
     public bool isCollide;
-
+    public bool padlockShown = false;
+    public bool isUnlock = false;
     public GameObject padlockUnlockText;
     public GameObject padlock;
     public GameObject collider;
@@ -22,6 +23,8 @@ public class UnlockPadlock : MonoBehaviour
     {
         if (isCollide && Input.GetButtonDown("Unlock"))
         {
+            padlockUnlockText.SetActive(false);
+            Debug.Log("padlock unlock Text disappeared");
             Debug.Log("Pressed E to unlock");
             PadlockEnlarge();
         }
@@ -31,10 +34,14 @@ public class UnlockPadlock : MonoBehaviour
     {
         if (other.gameObject.tag == "Collide")
         {
-            isCollide = true;
-            Debug.Log("Collide enter with padlock");
-            padlockUnlockText.SetActive(true);
-            Debug.Log("padlock unlock text displayed");
+            if (!padlockShown && !isUnlock) //large padlock not appear & not unlock 
+            {
+                isCollide = true;
+                Debug.Log("Collide enter with padlock");
+                padlockUnlockText.SetActive(true);
+                Debug.Log("padlock unlock text displayed");
+            }
+            
         }
     }
 
@@ -52,6 +59,7 @@ public class UnlockPadlock : MonoBehaviour
 
     void PadlockEnlarge()
     {
+        padlockShown = true;
         padlock.SetActive(true);
         Debug.Log("Padlock enlarge");
         collider.SetActive(false);

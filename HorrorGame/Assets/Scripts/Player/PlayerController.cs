@@ -36,6 +36,10 @@ namespace VerloreneWelt.PlayerControl
         private const float runSpeed = 4.0f;
         private Vector2 currentVelocity;
 
+        //allow mouse camera movement
+        public static bool mouseLookEnabled = true;
+
+
         // Start is called before the first frame update
         void Start()
         {
@@ -59,39 +63,47 @@ namespace VerloreneWelt.PlayerControl
 
         private void Move()
         {
-            if(!hasAnimator) return;
+            if (mouseLookEnabled)
+            {
+                if (!hasAnimator) return;
 
-            float targetSpeed = inputManager.Run ? runSpeed : walkSpeed;
+                float targetSpeed = inputManager.Run ? runSpeed : walkSpeed;
 
-            if (inputManager.Move == Vector2.zero) 
-                targetSpeed = 0.1f;
+                if (inputManager.Move == Vector2.zero)
+                    targetSpeed = 0.1f;
 
-            currentVelocity.x = Mathf.Lerp(currentVelocity.x, inputManager.Move.x * targetSpeed, AnimBlendSpeed * Time.fixedDeltaTime);
-            currentVelocity.y = Mathf.Lerp(currentVelocity.y, inputManager.Move.y * targetSpeed, AnimBlendSpeed * Time.fixedDeltaTime);
+                currentVelocity.x = Mathf.Lerp(currentVelocity.x, inputManager.Move.x * targetSpeed, AnimBlendSpeed * Time.fixedDeltaTime);
+                currentVelocity.y = Mathf.Lerp(currentVelocity.y, inputManager.Move.y * targetSpeed, AnimBlendSpeed * Time.fixedDeltaTime);
 
-            var xVelocityDifference = currentVelocity.x - playerRigidbody.velocity.x;
-            var zVelocityDifference = currentVelocity.y - playerRigidbody.velocity.z;
+                var xVelocityDifference = currentVelocity.x - playerRigidbody.velocity.x;
+                var zVelocityDifference = currentVelocity.y - playerRigidbody.velocity.z;
 
-            playerRigidbody.AddForce(transform.TransformVector(new Vector3(xVelocityDifference, 0, zVelocityDifference)), ForceMode.VelocityChange);
+                playerRigidbody.AddForce(transform.TransformVector(new Vector3(xVelocityDifference, 0, zVelocityDifference)), ForceMode.VelocityChange);
 
-            animator.SetFloat(xVelocityHash, currentVelocity.x);
-            animator.SetFloat(yVelocityHash, currentVelocity.y);
+                animator.SetFloat(xVelocityHash, currentVelocity.x);
+                animator.SetFloat(yVelocityHash, currentVelocity.y);
+            }
+            
         }
 
         private void CameraMovements()
         {
-            if (!hasAnimator)
-                return;
+            if (mouseLookEnabled)
+            {
+                if (!hasAnimator)
+                    return;
 
-            var mouseX = inputManager.Look.x;
-            var mouseY = inputManager.Look.y;
-            Camera.position = CameraRoot.position;
+                var mouseX = inputManager.Look.x;
+                var mouseY = inputManager.Look.y;
+                Camera.position = CameraRoot.position;
 
-            xRotation -= mouseY * MouseSensitivity * Time.deltaTime;
-            xRotation = Mathf.Clamp(xRotation, UpperLimit, BottomLimit);
+                xRotation -= mouseY * MouseSensitivity * Time.deltaTime;
+                xRotation = Mathf.Clamp(xRotation, UpperLimit, BottomLimit);
+
+                Camera.localRotation = Quaternion.Euler(xRotation, 0, 0);
+                transform.Rotate(Vector3.up, mouseX * MouseSensitivity * Time.deltaTime);
+            }
             
-            Camera.localRotation = Quaternion.Euler(xRotation, 0, 0);
-            transform.Rotate(Vector3.up, mouseX * MouseSensitivity * Time.deltaTime);
         }
     }
 
